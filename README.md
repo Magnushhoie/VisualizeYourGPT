@@ -5,6 +5,13 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
+<center><h1>VisualizeYourGPT</h1></center>
+
+<p align="center">
+  <img alt="VisualizeYourGPT"  src="https://github.com/Magnushhoie/VisualizeYourGPT/blob/main/images/gpt.jpg?raw=true" width="250"/
+</p>
+
+
 What is VisualizeYourGPT?
 - Connect [ChatGPT](https://chat.openai.com/chat) (GPT-3.5 or GPT-4.0) to a Python terminal and your dataset
 - Let it reason about new hypotheses, execute code and summarize findings in a [Jupyter notebook](https://github.com/Magnushhoie/VisualizeYourGPT/blob/main/output/notebook.ipynb)
