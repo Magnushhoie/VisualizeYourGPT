@@ -30,7 +30,7 @@ pip -r requirements.txt
 
 # (Make sure you can login to https://chat.openai.com/chat)
 # Run on example dataset
-python gpt.py
+python gpt.py --csv_file data/data.csv
 ```
 
 ## Requirements
