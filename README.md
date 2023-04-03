@@ -38,6 +38,19 @@ python gpt.py
 - [chatGPT-wrapper](https://github.com/mmabrouk/chatgpt-wrapper)
 - [Python 3.8+](https://www.python.org/downloads/)
 
+## Visualizing graphs in the terminal (MacOS)
+
+```bash
+# Install itermplot https://github.com/daleroberts/itermplot
+pip install itermplot==0.5
+
+# Set these settings in your terminal before running gpt.py (recommend NOT putting in .bashrc)
+# Use itermplot for Matplotlib plotting
+MPLBACKEND="module://itermplot"
+# Dark theme
+ITERMPLOT=rv
+```
+
 ## Documentation
 
 ```
