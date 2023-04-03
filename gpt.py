@@ -149,7 +149,7 @@ def record_model_output(bot, input_str, simulated=False):
 
             if len(output_str) > 1:
                 input_str = input(
-                    "==== Enter to send output to GPT 1. Manually edit and compute again or 0. Cancel ==== "
+                    "==== Enter to send output to ChatGPT. Manually edit and compute again or 0. Cancel ==== "
                 )
 
                 # Enter: Send output to GPT
