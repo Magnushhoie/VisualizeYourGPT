@@ -1,0 +1,8 @@
+chatGPT=0.7.2
+matplotlib
+seaborn
+numpy
+pandas
+scikit-learn
+scipy
+statsmodels

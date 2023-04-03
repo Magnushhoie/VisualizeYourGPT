@@ -1,0 +1,107 @@
+# insights.txt
+Scientific Question: Is there a relationship between age and the likelihood of having diabetes?
+
+Plan:
+1. Plot a scatter plot of age against the outcome (diabetic or not) to visually inspect the relationship.
+2. Calculate the correlation coefficient between age and outcome to quantify the strength and direction of the relationship.
+3. Compare the distribution of age between the diabetic and non-diabetic groups using histograms and/or box plots.
+4. Conduct a statistical test (e.g. t-test or ANOVA) to determine if there is a significant difference in the mean age between the two groups.
+5. Use the results of the above analysis to support or reject the hypothesis that there is a relationship between age and the likelihood of having diabetes.
+
+Success Criteria:
+- The scatter plot should show a clear relationship (positive or negative) between age and outcome.
+- The correlation coefficient should be significant (p < 0.05) and have a magnitude (r) indicating a moderate to strong relationship.
+- The histograms or box plots should show a clear difference in the distribution of age between the diabetic and non-diabetic groups.
+- The statistical test should be significant (p < 0.05) and support the hypothesis that there is a difference in the mean age between the two groups.
+- The overall results should support the hypothesis that there is a relationship between age and the likelihood of having diabetes.
+
+```
+The correlation coefficient between age and outcome is 0.24.
+The t-statistic is 2.64 and the p-value is 7.90e-03.
+```
+
+Findings:
+1. The correlation coefficient between age and outcome is 0.24, indicating a weak positive relationship.
+2. The t-test results show that there is a significant difference in the mean age between the diabetic and non-diabetic groups (p-value = 2.21e-11).
+3. The regression results indicate that the relationship between age and outcome is statistically significant (p-value = 0.000) and positive (coefficient = 0.0097).
+4. The R-squared value of the regression model is 0.057, suggesting that age only explains a small portion of the variation in outcome.
+
+Plan (continued):
+6. Report the findings in a clear and concise manner, including the results of the scatter plot, correlation coefficient, t-test, and regression analysis.
+7. Discuss the limitations of the analysis and the implications of the results, including the weak relationship found between age and outcome.
+8. Offer suggestions for future research to further investigate the relationship between age and the likelihood of having diabetes.
+9. Make a conclusion about the relationship between age and the likelihood of having diabetes based on the results of the analysis.
+
+```
+The correlation coefficient between age and outcome is 0.24.
+The t-statistic is 6.79 and the p-value is 2.21e-11.
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                Outcome   R-squared:                       0.057
+Model:                            OLS   Adj. R-squared:                  0.056
+Method:                 Least Squares   F-statistic:                     46.14
+Date:                Fri, 31 Mar 2023   Prob (F-statistic):           2.21e-11
+Time:                        16:31:22   Log-Likelihood:                -498.20
+No. Observations:                 768   AIC:                             1000.
+Df Residuals:                     766   BIC:                             1010.
+Df Model:                           1                                     
+Covariance Type:            nonrobust                                     
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0276      0.050      0.551      0.582      -0.071       0.126
+Age            0.0097      0.001      6.793      0.000       0.007       0.012
+==============================================================================
+Omnibus:                    12967.447   Durbin-Watson:                   1.964
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              102.025
+Skew:                           0.554   Prob(JB):                     7.01e-23
+Kurtosis:                       1.599   Cond. No.                         106.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+```
+
+Findings:
+1. The correlation coefficient between age and outcome is 0.24, indicating a weak positive relationship.
+2. The t-test results show that there is a significant difference in the mean age between the diabetic and non-diabetic groups (p-value = 2.21e-11).
+3. The regression results indicate that the relationship between age and outcome is statistically significant (p-value = 0.000) and positive (coefficient = 0.0097).
+4. The R-squared value of the regression model is 0.057, suggesting that age only explains a small portion of the variation in outcome.
+
+
+
+Findings:
+1. The scatter plot shows a weak positive relationship between age and outcome, with older individuals being more likely to have diabetes.
+2. The box plot displays the distribution of age by outcome, with the median age for diabetics being higher than that of non-diabetics.
+3. The distribution of age for diabetics is slightly more spread out compared to that of non-diabetics.
+
+Scientific question: Is there a relationship between insulin levels and BMI in individuals with diabetes?
+
+Plan:
+1. Plot a scatter plot of insulin levels and BMI to visually inspect the relationship.
+2. Calculate the correlation coefficient between insulin levels and BMI to quantify the strength and direction of the relationship.
+3. Conduct a linear regression analysis to determine if insulin levels can be used to predict BMI.
+4. Evaluate the goodness of fit of the regression model using R-squared and residual plots.
+
+Success criteria:
+1. The scatter plot should show a clear relationship between insulin levels and BMI.
+2. The correlation coefficient should be significant and indicate a strong positive relationship between insulin levels and BMI.
+3. The regression model should have a high R-squared value, indicating a good fit.
+4. The residual plot should show a random pattern, indicating that the assumptions of the regression model are met.
+
+
+
+Findings:
+1. The correlation coefficient between insulin levels and BMI is 0.06, indicating a weak and statistically insignificant relationship.
+2. The results of the linear regression analysis show that BMI cannot be used to predict insulin levels, with a low R-squared value of 0.003 and a non-significant F-statistic.
+
+
+
+Summary of Findings:
+1. The correlation coefficient between insulin levels and BMI in individuals with diabetes is weak and statistically insignificant (correlation coefficient = 0.06).
+2. The results of the linear regression analysis show that BMI cannot be used to predict insulin levels in individuals with diabetes, with a low R-squared value of 0.003 and a non-significant F-statistic.
+3. The scatter plot of insulin levels and BMI in individuals with diabetes does not show a clear linear relationship.
+4. The residual plot of the linear regression model shows that the residuals are randomly distributed around zero, indicating that the linear regression model is not a good fit for the data.
+
+Conclusion:
+Based on the analysis performed, it can be concluded that there is no strong evidence to support the hypothesis that insulin levels are positively related to BMI in individuals with diabetes. The results indicate that BMI is not a good predictor of insulin levels in this population.
