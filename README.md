@@ -8,7 +8,7 @@
 What is VisualizeYourGPT?
 - Connect ChatGPT (GPT-3.5 or GPT-4.0) to an executable Python script
 - Give it an input dataset
-- Let it reason about new hypotheses, execute code and summarize findings in a Jupyter notebook
+- Let it reason about new hypotheses, execute code and summarize findings in a [Jupyter notebook](https://github.com/Magnushhoie/VisualizeYourGPT/blob/main/output/notebook.ipynb)
 - It's free: Just login to ChatGPT through your browser, no API key is needed
 
 ## Installation and usage
