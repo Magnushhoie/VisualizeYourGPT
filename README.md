@@ -18,15 +18,17 @@ What is VisualizeYourGPT?
 - It's free: Just login to ChatGPT through your browser, no API key is needed
 - Nb: No code will run without confirmation, unless automatic mode is set
 
-## Installation and usage
-
 ```bash
 # Download and install
 git clone https://github.com/Magnushhoie/VisualizeYourGPT/
 cd VisualizeYourGPT
 
 # Install requirements
-pip -r requirements.txt
+pip install -r requirements.txt
+
+# Find you API key here https://platform.openai.com/account/api-keys
+# Then run
+export OPENAI_API_KEY=<API_KEY>
 
 # (Make sure you can login to https://chat.openai.com/chat)
 # Run on example dataset
