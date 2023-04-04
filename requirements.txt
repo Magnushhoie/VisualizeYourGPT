@@ -1,4 +1,5 @@
-git+https://github.com/mmabrouk/chatgpt-wrapper.git
+# Specific version required before browser mode was deprecated
+git+https://github.com/mmabrouk/chatgpt-wrapper.git@7079c933f91f7dfd2884bd98434c66ca9fd7c9e0
 jupytext
 matplotlib
 seaborn

@@ -26,9 +26,8 @@ cd VisualizeYourGPT
 # Install requirements
 pip install -r requirements.txt
 
-# Find you API key here https://platform.openai.com/account/api-keys
-# Then run
-export OPENAI_API_KEY=<API_KEY>
+# Setup ChatGPT, and login through the Playwright browser
+chatgpt install
 
 # Run on example dataset
 python gpt.py --csv_file data/data.csv

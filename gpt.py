@@ -8,7 +8,7 @@ from textwrap import dedent
 
 import numpy as np
 import pandas as pd
-from chatgpt_wrapper import OpenAIAPI
+from chatgpt_wrapper import ChatGPT
 from chatgpt_wrapper.core.config import Config
 
 from your_prompts import (code_for_script, prompt_introduction,
@@ -47,8 +47,8 @@ def cmdline_args():
     )
     p.add_argument(
         "--model",
-        default="turbo",
-        help="ChatGPT model to use (turbo), gpt-4, gpt4-32k",
+        default="default",
+        help="ChatGPT model to use (default = gpt-3.5 turbo), gpt-4, gpt4-32k",
     )
 
     p.add_argument(
@@ -343,7 +343,7 @@ def main(args):
         }
         """
         config.set("chat.model", args.model)
-        bot = OpenAIAPI(config)
+        bot = ChatGPT(config)
 
     # Reset files by writing to them
     os.makedirs("output/", exist_ok=True)
@@ -367,7 +367,7 @@ def main(args):
     # Nb: GPT-code written and executed from script.py and new output written to notebook.md
     stage_int = 1
     while True:
-        log.info(f"\n==== Loop {stage_int} ====")
+        log.info(f"\n\n==== Loop {stage_int} ====")
 
         if not input_str:
             input_str = pick_prompt_options(dataset_desc_str=dataset_desc_str)
