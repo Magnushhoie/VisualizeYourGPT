@@ -8,7 +8,6 @@ from textwrap import dedent
 
 import numpy as np
 import pandas as pd
-
 from chatgpt_wrapper import OpenAIAPI
 from chatgpt_wrapper.core.config import Config
 
@@ -48,9 +47,10 @@ def cmdline_args():
     )
     p.add_argument(
         "--model",
-        default="default",
-        help="ChatGPT model to use (default (gpt-3.5-turbo), gpt-4 or other OpenAI models)",
+        default="turbo",
+        help="ChatGPT model to use (turbo), gpt-4, gpt4-32k",
     )
+
     p.add_argument(
         "--simulate",
         action="store_true",
@@ -89,7 +89,7 @@ def _get_bot_response(bot, input_str, simulated_flag=False):
     return response
 
 
-def pick_prompt_options():
+def pick_prompt_options(dataset_desc_str):
     """Enables user to pick prompt from list, or input their own"""
 
     # Print prompts (imported from from your_prompts.py)
@@ -108,6 +108,9 @@ def pick_prompt_options():
     if "USER_INPUT" in input_str:
         user_input = input("Enter your own prompt:\n")
         input_str = input_str.replace("USER_INPUT", user_input)
+
+    if "DATASET_DESC_INPUT" in input_str:
+        input_str = input_str.replace("DATASET_DESC_INPUT", dataset_desc_str)
 
     return input_str
 
@@ -150,7 +153,7 @@ def record_model_output(bot, input_str, simulated=False):
 
             if len(output_str) > 1:
                 input_str = input(
-                    "==== Enter to send output to ChatGPT. Manually edit and compute again or 0. Cancel ==== "
+                    "==== Enter to send output to ChatGPT. 1. Manually edit and compute again or 0. Cancel ==== "
                 )
 
                 # Enter: Send output to GPT
@@ -328,8 +331,17 @@ def main(args):
     else:
         simulate_flag = False
         config = Config()
-        # {'default': 'text-davinci-002-render-sha', 'legacy-paid': 'text-davinci-002-render-paid', 'legacy-free': 'text-davinci-002-render', 'gpt4': 'gpt-4'}
-        # config.set('chat.model', 'legacy-free')
+        """
+        OPENAPI_CHAT_RENDER_MODELS = {
+            "default": "gpt-3.5-turbo",
+            "turbo": "gpt-3.5-turbo",
+            "turbo-0301": "gpt-3.5-turbo-0301",
+            "gpt4": "gpt-4",
+            "gpt4-0314": "gpt-4-0314",
+            "gpt4-32k": "gpt-4-32k",
+            "gpt4-32k-0314": "gpt-4-32k-0314",
+        }
+        """
         config.set("chat.model", args.model)
         bot = OpenAIAPI(config)
 
@@ -358,7 +370,7 @@ def main(args):
         log.info(f"==== Loop {stage_int} ====")
 
         if not input_str:
-            input_str = pick_prompt_options()
+            input_str = pick_prompt_options(dataset_desc_str=dataset_desc_str)
 
         # Option for quitting
         if input_str.lower() == "quit":

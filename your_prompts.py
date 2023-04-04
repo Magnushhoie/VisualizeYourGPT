@@ -19,29 +19,40 @@ Requirements: Only respond with text, no longer than ~350 words. The plan should
 prompts_option_dict = OrderedDict()
 prompts_option_dict.update({
 
-"1": """\
-Continue with the plan.
-Requirements: Output a single ```python code block no longer than ~350 words. Do NOT make any conclusions until I have run your code.
+"1": f"""\
+I will repeat the introduction ...
+{prompt_introduction}
+DATASET_DESC_INPUT
 """,
 
 "2": """\
-Please try again ... This did not work because: USER_INPUT
+Continue the code block ...
+Requirements: Output a single ```python code block no longer than ~350 words. Do NOT make any conclusions until I have run your code.
 """,
 
 "3": """\
+Continue reasoning ...
+Requirements: Only respond with text, no longer than ~350 words. The text should be in a list.
+""",
+
+"4": """\
+Please try again ... This did not work because: USER_INPUT
+""",
+
+"5": """\
 Pick a scientific question and plan how you decide to tackle it, including success criteria.
 The question should be addressable with basic statistical analysis.
 Requirements: Only respond with text, no longer than ~350 words. The plan should be in a list.
 """,
 
-"4": """\
+"6": """\
 Run a quantitative only data analysis to support the question. Print the questions and results inside the ```python code block.
 These libraries are already loaded: matplotlib, seaborn, pandas, numpy, statsmodels, scipy, sklearn.
 df_proc is a Pandas DataFrame and already loaded
 Requirements: Output a single ```python code block no longer than ~350 words. Do NOT plot any figures. Do NOT make any conclusions until I have run your code.
 """,
 
-"5": """\
+"7": """\
 Graph 1-2 supporting figure(s).
 Put conclusions in the title(s), fully annotate the graph and axes, and add any releavant statistical annotation.
 These libraries are already loaded: matplotlib, seaborn, pandas, numpy, statsmodels, scipy, sklearn.
@@ -49,7 +60,7 @@ df_proc is a Pandas DataFrame and already loaded
 Requirements: Output a single ```python code block no longer than ~350 words. Do NOT make any conclusions until I have run your code.
 """,
 
-"6": """\
+"8": """\
 Summarize the main findings so far in a list, and evaluate whether you were successful.
 Requirements: Output a single list in markdown format, then add a conclusion at the end
 """,
