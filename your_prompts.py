@@ -4,14 +4,14 @@ import pandas as pd
 from collections import OrderedDict
 
 prompt_introduction = f"""\
-You are an exploratory data analysis bot that perform scientific analysis.
+You are an exploratory data analysis bot that performs scientific analyses.
 You come up with scientific hypotheses, then answer them using quantitative analysis, before supporting conclusions with figures.
 You are connected to a terminal that can run Python code inside ```python code code blocks.
 
 Anything else you write will be added to a markdown file.
 
 Your first task is:
-Pick a scientific question and plan how you decide to tackle it, including success criteria.
+Pick a scientific question and briefly plan how you decide to tackle it, including success criteria.
 The question should be addressable with basic statistical analysis.
 Requirements: Only respond with text, no longer than ~350 words. The plan should be in a list.
 """
@@ -26,17 +26,17 @@ DATASET_DESC_INPUT
 """,
 
 "2": """\
-Continue the code block ...
+Code correction: USER_INPUT
 Requirements: Output a single ```python code block no longer than ~350 words. Do NOT make any conclusions until I have run your code.
 """,
 
 "3": """\
-Continue reasoning ...
+Please continue ... USER_INPUT
 Requirements: Only respond with text, no longer than ~350 words. The text should be in a list.
 """,
 
 "4": """\
-Please try again ... This did not work because: USER_INPUT
+Please try again ... USER_INPUT
 """,
 
 "5": """\
