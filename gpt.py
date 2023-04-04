@@ -8,7 +8,8 @@ from textwrap import dedent
 
 import numpy as np
 import pandas as pd
-from chatgpt_wrapper import ChatGPT
+
+from chatgpt_wrapper import OpenAIAPI
 from chatgpt_wrapper.core.config import Config
 
 from your_prompts import (code_for_script, prompt_introduction,
@@ -47,8 +48,8 @@ def cmdline_args():
     )
     p.add_argument(
         "--model",
-        default="legacy-free",
-        help="ChatGPT model to use (legacy-free, legacy-paid, gpt4)",
+        default="default",
+        help="ChatGPT model to use (default (gpt-3.5-turbo), gpt-4 or other OpenAI models)",
     )
     p.add_argument(
         "--simulate",
@@ -330,7 +331,7 @@ def main(args):
         # {'default': 'text-davinci-002-render-sha', 'legacy-paid': 'text-davinci-002-render-paid', 'legacy-free': 'text-davinci-002-render', 'gpt4': 'gpt-4'}
         # config.set('chat.model', 'legacy-free')
         config.set("chat.model", args.model)
-        bot = ChatGPT()
+        bot = OpenAIAPI(config)
 
     # Reset files by writing to them
     os.makedirs("output/", exist_ok=True)

@@ -1,4 +1,5 @@
-chatGPT=0.7.2
+git+https://github.com/mmabrouk/chatgpt-wrapper.git
+jupytext
 matplotlib
 seaborn
 numpy

@@ -1,52 +1,28 @@
 # insights.txt
-Insights:
-- There are no missing values in the dataset.
-- The number of unique values is 17 for Pregnancies, 136 for Glucose, 47 for BloodPressure, 51 for SkinThickness, 186 for Insulin, 248 for BMI, 517 for DiabetesPedigreeFunction, 52 for Age, and 2 for Outcome.
-- There is a moderate positive correlation between Glucose and Outcome (Pearson correlation coefficient = 0.47, p-value < 0.001).
-- Diabetic patients have a higher mean Glucose and Age compared to non-diabetic patients.
-- The proportion of diabetic patients in the dataset is 0.35, while the proportion of non-diabetic patients is 0.65.
-- The median number of pregnancies is higher for diabetic patients compared to non-diabetic patients.
+Scientific Question: 
 
-Insights:
-- The median Glucose value is 117, while the median Insulin value is 30.5.
-- There are 5 features (BloodPressure, SkinThickness, Insulin, BMI, and DiabetesPedigreeFunction) with a large number of zero values.
-- The proportion of zero values for these features is as follows:
-  - BloodPressure: 4.56%
-  - SkinThickness: 29.56%
-  - Insulin: 48.70%
-  - BMI: 1.43%
-  - DiabetesPedigreeFunction: 0.00%
-- The histograms show that most of the features are approximately normally distributed, with some skewness.
-- The boxplots show that there are some outliers in some of the features, especially Insulin.
+Is there a significant difference between the mean Glucose level of patients with Diabetes and patients without Diabetes? 
 
-Based on the exploratory data analysis, some scientific questions that can be investigated using this dataset are:
+Plan:
 
-1. Can Glucose be used as a predictor for diabetes, and if so, what is the optimal threshold value for diagnosing diabetes?
-2. Are there any other features that are strongly associated with diabetes, and how do they compare to Glucose in terms of prediction accuracy?
-3. What is the relationship between BMI and diabetes, and how does this relationship differ between male and female patients?
-4. Can age be used to predict the onset of diabetes, and if so, at what age are patients at highest risk?
-5. Is there a relationship between the number of pregnancies and diabetes, and if so, is this relationship linear or nonlinear?
-6. How does the proportion of zero values in each feature affect the accuracy of predictive models for diabetes?
-7. Are there any specific subpopulations that are at higher risk for diabetes, such as patients with a family history of diabetes or patients with certain genetic mutations?
-8. Can insulin be used as a predictor for diabetes, and how does it compare to other features in terms of prediction accuracy?
-9. What is the effect of lifestyle factors such as diet and exercise on the risk of developing diabetes, and can this information be used to develop targeted prevention strategies?
-10. How do different machine learning algorithms perform in predicting diabetes, and which algorithm is most effective given the dataset's characteristics?
+1. Subset the dataframe into two groups, one for patients with Diabetes (Outcome == 1) and one for patients without Diabetes (Outcome == 0).
 
-As an AI language model, I do not have the capability to create figures directly. However, I can provide the code to generate them and the insights gained from them.
+2. Calculate the mean Glucose levels for each of the two groups.
 
-The data analysis so far has revealed some interesting insights about the dataset. We found that:
+3. Use t-test to determine if there is a significant difference between the two means.
 
-- There are no missing values in the dataset.
-- Some features such as Pregnancies and Glucose have a wide range of unique values while others such as Outcome are binary with only 2 unique values.
-- The correlation matrix shows that Glucose has the highest positive correlation with Outcome among all features (0.47). Age also has a moderate positive correlation with Outcome (0.24).
-- The p-value of the correlation between Glucose and Outcome is very small (8.9e-43) indicating that this correlation is statistically significant.
-- The mean Glucose level is significantly higher for diabetic patients compared to non-diabetic patients (141 vs 109.98).
-- The mean age is also higher for diabetic patients (37.07 vs 31.19).
-- The proportion of diabetic patients in the dataset is 0.35 while the proportion of non-diabetic patients is 0.65.
-- The median number of pregnancies is higher for diabetic patients compared to non-diabetic patients (4.0 vs 2.0).
-- The quartiles of Glucose levels indicate that most patients fall within the range of 99-140.
-- The quartiles of Insulin levels indicate that there is a wide range of values, with the majority of patients having low or zero insulin levels.
-- Many patients have a zero value for SkinThickness, Insulin and Outcome, indicating that this could be missing data that was filled with zeros.
-- SkinThickness and Insulin have a relatively high proportion of zero values (0.3 and 0.5 respectively).
+4. Set the null hypothesis as "there is no significant difference between the mean Glucose level of patients with Diabetes and patients without Diabetes". 
 
-Based on these insights, we can now ask a series of scientific questions about the dataset and try to answer them with appropriate visualizations.
+5. Set the alternative hypothesis as "there is a significant difference between the mean Glucose level of patients with Diabetes and patients without Diabetes".
+
+6. Set the significance level at 0.05.
+
+7. If the p-value obtained from the t-test is less than the significance level, reject the null hypothesis and conclude that there is a significant difference in the mean Glucose levels between patients with Diabetes and patients without Diabetes.
+
+8. If the p-value obtained from the t-test is greater than the significance level, fail to reject the null hypothesis and conclude that there is no significant difference in the mean Glucose levels between patients with Diabetes and patients without Diabetes.
+
+9. Visualize the distributions of Glucose levels for both groups using histograms to support the conclusions.
+
+Success Criteria:
+
+The success of this analysis will be dependent on our ability to confirm or reject the null hypothesis with a reasonable level of certainty based on the p-value obtained from the t-test. Additionally, the visualization of the distribution for both groups using histograms should provide a clear picture of the potential differences between the two groups' glucose levels.

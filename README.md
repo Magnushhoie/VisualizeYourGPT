@@ -30,7 +30,6 @@ pip install -r requirements.txt
 # Then run
 export OPENAI_API_KEY=<API_KEY>
 
-# (Make sure you can login to https://chat.openai.com/chat)
 # Run on example dataset
 python gpt.py --csv_file data/data.csv
 ```
