@@ -367,7 +367,7 @@ def main(args):
     # Nb: GPT-code written and executed from script.py and new output written to notebook.md
     stage_int = 1
     while True:
-        log.info(f"==== Loop {stage_int} ====")
+        log.info(f"\n==== Loop {stage_int} ====")
 
         if not input_str:
             input_str = pick_prompt_options(dataset_desc_str=dataset_desc_str)

@@ -32,12 +32,24 @@ export OPENAI_API_KEY=<API_KEY>
 
 # Run on example dataset
 python gpt.py --csv_file data/data.csv
+
+# Nb: You can edit the choice of prompts in your_prompts.py
 ```
 
 ## Requirements
 
 - [chatGPT-wrapper](https://github.com/mmabrouk/chatgpt-wrapper)
 - [Python 3.8+](https://www.python.org/downloads/)
+
+## Example workflow:
+
+1. Introduce context and give dataset description (automatic)
+2. **Option 6**: "6: Run a quantitative only data analysis to support the question."
+3. Let GPT output code, run it and return output, then ask to summarize findings
+3. **Option 7**: "7: Graph 1-2 supporting figure(s)."
+4. Let GPT output code, run it and return output, then ask to summarize findings
+5. **Option 5**: "5: Pick a scientific question and plan how you decide to tackle it"
+6. Repeat steps 2-5.
 
 ## Visualizing graphs in the terminal (MacOS)
 
